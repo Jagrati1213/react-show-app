@@ -14,4 +14,8 @@
     .menu_btn {
         @apply inline-flex items-center p-2 ml-3 rounded-lg cursor-pointer;
     }
+
+    .btn_class {
+        @apply font-bold rounded bg-red-700 text-white py-3 px-10 text-sm my-2 flex items-center;
+    }
 }
