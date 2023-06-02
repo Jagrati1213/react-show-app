@@ -26,23 +26,16 @@ function MenuList({ navbarOpen }) {
 
   return (
     <>
-      <div
-        className={`hidden w-full md:block md:w-auto z-50 menu${navbarOpen ? ' show-menu' : ''} `}
-      >
+      <div className={`w-full md:block md:w-auto z-50 menu ${navbarOpen ? 'block' : 'hidden'} `}>
         <ul className="flex flex-col p-4 md:p-0 bg-gray-50 md:flex-row md:space-x-8 md:bg-white text-slate font-semibold hover:text-black text-lg  items-center">
           <li>
             <Link to="/" className="block py-4 px-3 text-slate hover:text-black md:p-0">
               Home
             </Link>
           </li>
-          <li>
-            <Link to="/product" className="block py-4 px-3 text-slate hover:text-black md:p-0">
-              Product
-            </Link>
-          </li>
           <li className="md:my-0 my-4">
-            <IconContext.Provider value={{ size: '18px' }}>
-              <Link to="/login" className="block p-2 bg-slate text-whiteSmoke rounded-full">
+            <IconContext.Provider value={{ size: '20px' }}>
+              <Link to="/login" className="block p-2 bg-slate-800 text-white rounded-full">
                 <GoPerson />
               </Link>
             </IconContext.Provider>
@@ -71,5 +64,4 @@ function MenuList({ navbarOpen }) {
     </>
   );
 }
-
 export default MenuList;
