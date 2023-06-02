@@ -14,7 +14,7 @@ It's a react base show's website, where you can login, signin & book tickets for
 - React Icons
 - Redux-Toolkit
 
-###Project Gallery ###
+### Project Gallery ###
 ![image](https://github.com/Jagrati1213/react-show-app/assets/85276293/f10b9fbb-b536-49c8-8c0f-c236153041ea)
 ![image](https://github.com/Jagrati1213/react-show-app/assets/85276293/a0d07e5d-4730-4804-a469-53fdcde8b948)
 ![image](https://github.com/Jagrati1213/react-show-app/assets/85276293/2f9214ef-5a24-4b43-8d18-035ddb2abfdf)
