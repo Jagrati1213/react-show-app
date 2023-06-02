@@ -35,7 +35,7 @@ function CardShow() {
           ? shows.map((i) => {
               return (
                 <Col
-                  className="gutter-row cursor-pointer rounded"
+                  className="gutter-row cursor-pointer rounded hover:-translate-y-2 transform"
                   xs={{ span: 24 }}
                   sm={{ span: 12 }}
                   md={{ span: 12 }}
@@ -45,9 +45,9 @@ function CardShow() {
                 >
                   <Link to={`/${i.show.id}`}>
                     <Card
-                      className=" overflow-hidden mb-8"
+                      className="overflow-hidden mb-8"
                       cover={
-                        <div className=" overflow-hidden h-[400px]">
+                        <div className="overflow-hidden h-[400px]">
                           <img
                             alt="item"
                             className="w-full rounded-s h-full"
