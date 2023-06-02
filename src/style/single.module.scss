@@ -1,0 +1,22 @@
+.image_height {
+  :global(.ant-image) {
+    object-fit: cover;
+    height: 400px;
+    padding: 2rem;
+    @media only screen and (max-width: 768px) {
+      padding: 0;
+    }
+    :global(.ant-image-img) {
+      object-fit: contain;
+      height: 100% !important;
+    }
+  }
+}
+.skeleton {
+  :global(.ant-skeleton) {
+    width: 100%;
+  }
+  :global(.ant-skeleton-element) {
+    width: 100%;
+  }
+}
