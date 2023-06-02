@@ -20,3 +20,9 @@
     width: 100%;
   }
 }
+.fixBtn {
+  :global(.ant-btn-primary) {
+    background-color: crimson;
+    color: white;
+  }
+}
