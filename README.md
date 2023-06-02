@@ -1,5 +1,6 @@
 # React Based - Shows App
-It's a react base show's website, where you can login, signin & book tickets for movies.
+It's a react base show's website, where you can login, signin & book tickets for shows.
+In this project I used Redux to manage state with globall. 
 ### Learned Things 
 - React Component
 - Redux
