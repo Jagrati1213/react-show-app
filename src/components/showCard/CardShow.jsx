@@ -16,7 +16,6 @@ function CardShow() {
     const fetchingData = async () => {
       try {
         const { data } = await getShows();
-        console.log(data);
         setShows(data);
         controller = null;
       } catch (err) {
