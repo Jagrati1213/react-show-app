@@ -9,7 +9,7 @@ import { BsBagHeartFill } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getSingleShows } from '../AxiosClient';
-import { calculatePrice, userOrderList } from '../store/slices/AuthSlice';
+import { calculatePrice, resetPrice, userOrderList } from '../store/slices/AuthSlice';
 import Style from '../style/single.module.scss';
 
 function SingleShow() {
@@ -36,6 +36,7 @@ function SingleShow() {
       try {
         const { data } = await getSingleShows(params.showId);
         setItem(data);
+        dispatch(resetPrice());
         controller = null;
       } catch (err) {
         console.error(err);
@@ -86,6 +87,7 @@ function SingleShow() {
     event.preventDefault();
     dispatch(calculatePrice(quantity));
     dispatch(userOrderList(item));
+    dispatch(resetPrice());
     setOpen(false);
   };
 
@@ -93,6 +95,7 @@ function SingleShow() {
   const handleCancel = () => {
     setQuantity(0);
     setOpen(false);
+    dispatch(resetPrice());
   };
 
   return (
@@ -112,12 +115,12 @@ function SingleShow() {
                     console.log(`current index: ${current}, prev index: ${prev}`),
                 }}
               >
-                <Image width={500} src={item.image.original} className="rounded" />
+                <Image width={500} src={item.image.original} />
               </Image.PreviewGroup>
             </Col>
 
             {/* SingleProduct Details */}
-            <Col xs={{ span: 24 }} lg={{ span: 12 }} className="p-8">
+            <Col xs={{ span: 24 }} lg={{ span: 12 }} className="md:p-8 p-3">
               <h1 className="lg:text-[2.6rem] text-2xl font-bold uppercase mb-4">{item.name}</h1>
               <p className="lg:text-lg text-base text-gray-700 text-justify my-6">
                 {item.summary.replace(/(<([^>]+)>)/gi, '')}
@@ -157,6 +160,7 @@ function SingleShow() {
                       open={open}
                       onOk={handleCheckout}
                       onCancel={handleCancel}
+                      className={Style.fixBtn}
                     >
                       <form onSubmit={handleCheckout}>
                         <p className="p-3 bg-red-400 w-full text-lg font-semibold text-white">
