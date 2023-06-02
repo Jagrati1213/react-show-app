@@ -33,6 +33,7 @@ function Profile() {
           <p className="text-xl pb-8">Booking Tickets</p>
 
           <List
+            className=" h-72 overflow-y-scroll"
             itemLayout="horizontal"
             dataSource={currentUser.userOrder}
             renderItem={(item) => (
