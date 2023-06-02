@@ -3,7 +3,7 @@ import { IconContext } from 'react-icons';
 import { AiOutlineMenuFold } from 'react-icons/ai';
 import { GrClose } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
-import '../../style/style.module.scss';
+import logo from '../../demo.png';
 import MenuList from './MenuList';
 
 function Header() {
@@ -15,13 +15,14 @@ function Header() {
         {/* Logo */}
         <Link
           to="/"
-          className="logo_img flex items-center md:w-36 w-[7rem] h-[-webkit-fill-available]"
+          className="logo_img flex items-center md:w-[5rem] w-[3.5rem] h-[-webkit-fill-available]"
         >
-          <img src="" alt="ajio logo" className="w-full object-cover mr-3" />
+          <img src={logo} alt="ajio logo" className="w-full object-cover mr-3" />
         </Link>
 
         {/* Hamburger */}
         <button
+          data-collapse-toggle="navbar-default"
           type="button"
           className="menu_btn md:hidden hover:text-black"
           onClick={() => setNavbarOpen((prev) => !prev)}
