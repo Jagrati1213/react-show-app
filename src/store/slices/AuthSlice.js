@@ -97,6 +97,16 @@ const userDetailsSlice = createSlice({
             localStorage.setItem('userMovieDetails', JSON.stringify(state.userMovieDetails));
         },
 
+        resetPrice: (state, _) => {
+            const currentUser = state.userMovieDetails.find((i) => i.isUser === true);
+            if (currentUser) {
+                currentUser.subTotal = 0;
+                currentUser.total = currentUser.subTotal;
+            }
+            // reset storage
+            localStorage.setItem('userMovieDetails', JSON.stringify(state.userMovieDetails))
+        }
+
     }
 });
 
@@ -106,5 +116,6 @@ export const {
     logOut,
     calculatePrice,
     userOrderList,
+    resetPrice
 } = userDetailsSlice.actions;
 export default userDetailsSlice.reducer;
