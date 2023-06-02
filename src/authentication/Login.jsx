@@ -3,7 +3,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import { logIn } from '../Store/AuthReducer';
 import Profile from '../pages/Profile';
 import { logIn } from '../store/slices/AuthSlice';
 
