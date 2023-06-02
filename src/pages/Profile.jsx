@@ -29,23 +29,28 @@ function Profile() {
 
       {/* booking Items */}
       {
-        <div className="border-t-2 border-slate-500 p-10 w-[90%] px-10 rounded">
-          <p className="text-xl pb-8">Booking Tickets</p>
-
-          <List
-            className=" h-72 overflow-y-scroll"
-            itemLayout="horizontal"
-            dataSource={currentUser.userOrder}
-            renderItem={(item) => (
-              <List.Item scroll={{ x: 300, y: 300 }} key={item.id}>
-                <List.Item.Meta
-                  avatar={<Avatar src={item.image.original} />}
-                  title={item.name}
-                  description={item.language}
-                />
-              </List.Item>
-            )}
-          />
+        <div className="border-t-2 border-slate-400 p-10 w-[90%] px-10 rounded">
+          {currentUser.userOrder.length > 0 ? (
+            <>
+              <p className="text-xl pb-8">Booking Tickets</p>
+              <List
+                className=" h-72 overflow-y-scroll"
+                itemLayout="horizontal"
+                dataSource={currentUser.userOrder}
+                renderItem={(item) => (
+                  <List.Item scroll={{ x: 300, y: 300 }} key={item.id}>
+                    <List.Item.Meta
+                      avatar={<Avatar src={item.image.original} />}
+                      title={item.name}
+                      description={item.language}
+                    />
+                  </List.Item>
+                )}
+              />
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       }
     </main>
