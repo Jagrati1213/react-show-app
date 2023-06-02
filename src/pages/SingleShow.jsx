@@ -160,26 +160,26 @@ function SingleShow() {
                       open={open}
                       onOk={handleCheckout}
                       onCancel={handleCancel}
-                      className={Style.fixBtn}
+                      className={`${Style.fixBtn} pt-4`}
                     >
                       <form onSubmit={handleCheckout}>
-                        <p className="p-3 bg-red-400 w-full text-lg font-semibold text-white">
+                        <p className="py-3 text-red-400 w-full md:text-lg text-base font-semibold my-5">
                           Book Your Ticket
                         </p>
                         <Flex justifyContent={'space-between'}>
-                          <p className="py-3 text-slate-900 font-bold text-base">
+                          <p className="py-3 text-slate-900 font-bold md:text-base text-sm">
                             Note - Available seats are only 20
                           </p>
                           <HStack>
                             <button
-                              className="px-2 text-slate-900 rounded-full text-2xl"
+                              className="px-2 text-slate-900 rounded-full md:text-2xl text-lg"
                               onClick={increment}
                             >
                               <AiOutlinePlusCircle />
                             </button>
                             <span className="text-black">{quantity}</span>
                             <button
-                              className="px-2 text-slate-900 rounded-full text-2xl"
+                              className="px-2 text-slate-900 rounded-full md:text-2xl text-lg"
                               onClick={decrement}
                             >
                               <AiOutlineMinusCircle />
@@ -189,7 +189,7 @@ function SingleShow() {
 
                         <HStack
                           justifyContent={'space-between'}
-                          className="my-4 px-2 text-xl border-t-2"
+                          className="my-4 px-2 md:text-xl text-lg border-t-2 py-5"
                         >
                           <p>Grand Total</p>
                           <p> ₹ {currentUser.total}</p>
